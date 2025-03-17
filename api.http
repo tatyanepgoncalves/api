@@ -6,14 +6,14 @@ POST http://127.0.0.1:5000/doar
 Content-Type: application/json
 
 {
-  "title": "Um verão na Itália",
-  "category": "Romance",
-  "author": "Carrie Elks",
-  "image_url": "https://i0.wp.com/blog.skeelo.com/wp-content/uploads/2023/06/um-verao-na-italia.png"
+  "title": "O senhor dos aneis",
+  "category": "Fantasia",
+  "author": "J. R. R. Tolkien",
+  "image_url": "https://http2.mlstatic.com/D_NQ_NP_921355-MLU74113001742_012024-O.webp"
 }
 
 ### 
 GET http://127.0.0.1:5000/list-livros
 
 ### 
-DELETE http://127.0.0.1:5000/livros/1
+DELETE http://127.0.0.1:5000/livros/4

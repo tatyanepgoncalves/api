@@ -55,6 +55,7 @@ def listar_livros():
 
     return jsonify(livros), 200
 
+
 @app.route("/livros/<int:id>", methods=["DELETE"])
 def deletar_livros(id):
     with sqlite3.connect('database.db') as conn:
@@ -65,7 +66,7 @@ def deletar_livros(id):
         if not livro:
             return jsonify({ "erro" : "Livro não encontrado."}), 404
 
-        cursor.execute(""" SELECT * FROM livros WHERE id = ?""", (id,))
+        cursor.execute(""" DELETE FROM livros WHERE id = ?""", (id,))
         conn.commit()
     return jsonify({ "mensagem": f"Livro com ID {id} deletado com sucesso."}), 200
 
