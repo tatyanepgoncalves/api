@@ -19,12 +19,10 @@ Este projeto é uma API simples para gerenciar livros, construída com **Flask**
 - **Linguagens**
   - Python
   - HTML
-  - CSS
 
 - **Bibliotecas e Frameworks**
   - Flask
   - SQLite3
-  - Flasgger (Swagger para Flask)
 
 - **Ferramentas**
   - Git
