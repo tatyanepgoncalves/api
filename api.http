@@ -1,3 +1,6 @@
+#  Necessário da extensão REST CLIENT para funcionar
+# Quando tiver instalada acima da HTTP link aparecerá `Send Request` só clicar com o mouse pressionando a tecla CTRL.
+
 GET http://127.0.0.1:5000
 Content-Type: application/json
 
@@ -6,9 +9,9 @@ POST http://127.0.0.1:5000/doar
 Content-Type: application/json
 
 {
-  "title": "O senhor dos aneis",
+  "title": "Alice no País das Maravilhas",
   "category": "Fantasia",
-  "author": "J. R. R. Tolkien",
+  "author": "Lewis Carroll",
   "image_url": "https://http2.mlstatic.com/D_NQ_NP_921355-MLU74113001742_012024-O.webp"
 }
 
@@ -16,4 +19,16 @@ Content-Type: application/json
 GET http://127.0.0.1:5000/list-livros
 
 ### 
-DELETE http://127.0.0.1:5000/livros/4
+PUT http://127.0.0.1:5000/livros/10
+Content-Type: application/json
+
+{
+  "title": "Alice no País das Maravilhas AA",
+  "category": "Fantasia AA",
+  "author": "Lewis Carroll AA",
+  "image_url": "https://http2.mlstatic.com/D_NQ_NP_921355-MLU74113001742_012024-O.webp"
+}
+
+
+### 
+DELETE http://127.0.0.1:5000/livros/7

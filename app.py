@@ -1,8 +1,8 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 
-app = Flask(__name__)
 
+app = Flask(__name__)
 
 def init_db():
     with sqlite3.connect("database.db") as conn:
@@ -21,7 +21,7 @@ init_db()
 
 @app.route("/")
 def homepage():
-    return "<h2>Hello World!</h2>"
+    return render_template('index.html')
 
 
 @app.route("/doar", methods=["POST"])
@@ -55,6 +55,14 @@ def listar_livros():
 
     return jsonify(livros), 200
 
+@app.route("/livros/<int:livro_id>", methods=["PUT"])
+def atualizar_livros(livro_id, title, category, author, image_url):
+    with sqlite3.connect("database.db") as conn:
+        cursor = conn.cursor()
+        cursor.execute(""" UPDATE livros SET title = ?, category = ?, author = ?, image_url = ? WHERE = ?""", (title, category, author, image_url, livro_id))
+        conn.commit()
+
+    return jsonify({ "Mensagem": "Livro atualizado com sucesso."}), 200
 
 @app.route("/livros/<int:id>", methods=["DELETE"])
 def deletar_livros(id):
