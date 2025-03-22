@@ -19,16 +19,16 @@ Content-Type: application/json
 GET http://127.0.0.1:5000/list-livros
 
 ### 
-PUT http://127.0.0.1:5000/livros/10
+PUT http://127.0.0.1:5000/livros/12
 Content-Type: application/json
 
 {
-  "title": "Alice no País das Maravilhas AA",
-  "category": "Fantasia AA",
-  "author": "Lewis Carroll AA",
-  "image_url": "https://http2.mlstatic.com/D_NQ_NP_921355-MLU74113001742_012024-O.webp"
+  "title": "Dom Casmurro",
+  "category": "Romance",
+  "author": "Machado de Assis",
+  "image_url": "https://m.media-amazon.com/images/I/61Z2bMhGicL.jpg"
 }
 
 
 ### 
-DELETE http://127.0.0.1:5000/livros/7
+DELETE http://127.0.0.1:5000/livros/8

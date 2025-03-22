@@ -55,11 +55,18 @@ def listar_livros():
 
     return jsonify(livros), 200
 
-@app.route("/livros/<int:livro_id>", methods=["PUT"])
-def atualizar_livros(livro_id, title, category, author, image_url):
+@app.route("/livros/<int:id>", methods=["PUT"])
+def atualizar_livros(id):
+
+    data = request.json
+    title = data.get("title")
+    category = data.get("category")
+    author = data.get("author")
+    image_url = data.get("image_url")
+
     with sqlite3.connect("database.db") as conn:
         cursor = conn.cursor()
-        cursor.execute(""" UPDATE livros SET title = ?, category = ?, author = ?, image_url = ? WHERE = ?""", (title, category, author, image_url, livro_id))
+        cursor.execute(""" UPDATE livros SET title = ?, category = ?, author = ?, image_url = ? WHERE id = ?""", (title, category, author, image_url, id, ))
         conn.commit()
 
     return jsonify({ "Mensagem": "Livro atualizado com sucesso."}), 200
